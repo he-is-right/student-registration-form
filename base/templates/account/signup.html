@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Owlcade || Register</title> -->
+    <title>{% block title %}Owlcade || Register{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- fonts from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b3bc2f1a64.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-[#e0f9ff]">
+    {% block content %}
+    <div class="w-[95%] md:w-[70%] mx-auto my-[10%]">
+        <div class=" flex items-center w-[30%] md:w-[13%] gap-2 justify-between">
+            <img class="md:w-[40%] w-[30%]" src="{% static 'images/logo.png' %}" alt="Owlcade Logo" srcset="">
+            <a class="font-bold" href="#">Owlcade</a>
+        </div>
+        <h1 class="mt-[3rem] md:mt-[5rem] font-bold text-2xl md:text-[2.6rem] font-[Roboto]">Level up Your Tech Game with Owlcade</h1>
+        <p class="mt-[1rem] md:mt-[2.5rem] text-[.83rem] font-[Roboto]">Are you ready to take your skills to the next level and stand out from your peers? Look no further than Owlcade 2 - 3 months bootcamp. Our self-paced continuous development platform offers advanced training and job opportunities in UI/UX design, Frontend Development, and Backend Development.</p>
+        <p class="mt-[1.3rem] md:mt-[1rem] text-[.83rem] font-[Roboto]">Enrolling in the Owlcade Technologies bootcamp will set you up for success in your tech journey, and our experienced mentors help you make progress in your tech career. Fill out the form below to join the future of tech with Owlcade Technologies.</p>
+        <form action="" method="POST" class="mt-[2rem] md:mt-[4rem]">
+            {% csrf_token %}
+            <div>
+                <label class="text-[.83rem]" for="firstName">First Name</label>
+                <input required type="text" placeholder="Enter your first name" name="firstName" class="my-2 px-4 py-2 rounded">
+            </div>
+
+            <div>
+                <label class="text-[.83rem]" for="lastName">Last Name</label>
+                <input required type="text" placeholder="Enter your last name" name="lastName" class="my-2 px-4 py-2 rounded">
+            </div>
+
+            <div>
+                <label class="text-[.83rem]" for="phone">Phone</label>
+                <input required type="text" placeholder="Enter your phone number" name="phoneNumber" class="my-2 px-4 py-2 rounded">
+            </div>
+
+            <div>
+                <label class="text-[.83rem]" for="phone">Email</label>
+                <input required type="email" placeholder="example@example.com" name="email" class="my-2 px-4 py-2 rounded">
+            </div>
+
+            <div class="flex flex-col">
+                <label class="mt-4 text-[red] text-[.83rem]" for="location">Pick your location*</label>
+                <select class="focus:outline-none w-[100%] px-2 py-2 my-2 rounded bg-white" name="location" id="location">
+                    <option value=""></option>
+                    <option value="Owerri">Owerri</option>
+                    <option value="Bonny">Bonny Island</option>
+                    <option value="Online">Online</option>
+                </select>
+            </div>
+            <button type="submit" class="my-8 bg-black text-white py-4 px-8 rounded" >Submit</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

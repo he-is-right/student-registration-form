@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Owlcade || Success{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <!-- Google icons here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="success flex flex-col items-center rounded md:w-[40%] w-full">
+        <div class="bg-[green] w-full flex items-center justify-center">
+            <span class="material-symbols-outlined font-bold text-7xl text-white my-[5rem]">
+                check_circle
+            </span>
+        </div>
+        <h2 class="font-bold mt-4 text-xl">Congratulations!</h2>
+        <p class="w-[90%] md:w-[60%] text-center mt-4">Your profile has been created. Please check your email for more information.</p>
+
+        <a href="https://mail.google.com/mail/u/0/#inbox" class="my-6 bg-black text-white py-4 px-8 rounded">Check mail</a>
+    </div>
+</body>
+</html>

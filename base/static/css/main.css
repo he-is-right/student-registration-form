@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&family=Roboto:wght@500&display=swap');
+
+
+input, select{
+    outline: none !important;
+    width: 100%;
+    border: 1px solid #909090;
+}
+.success{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

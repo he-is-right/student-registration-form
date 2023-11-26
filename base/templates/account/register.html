@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owlcade</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b3bc2f1a64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="shadow-lg">
+        <nav class="w-[90%] mx-auto py-4 flex items-center justify-between">
+            <div class=" flex items-center w-[30%] md:w-[10%] gap-2 justify-between">
+                <img class="md:w-[30%] w-[40%]" src="{% static 'images/logo.png' %}" alt="Owlcade Logo" srcset="">
+                <a class="font-bold" href="#">Owlcade</a>
+            </div>
+            <a class="text-2xl" target="_blank" href="https://www.linkedin.com/company/owlcade/?viewAsMember=true">
+                <i class="fa-brands fa-linkedin text-[blue]"></i>
+            </a>
+        </nav>
+    </header>
+    <main class="flex flex-col-reverse md:flex-row items-center justify-between md:w-[90%] w-[100%] mx-auto my-20">
+        <form class="md:w-[55%] w-[90%] bg-[#d1ecfb] rounded p-4" action="" method="post">
+            {% csrf_token %}
+            <h1 class="font-bold text-4xl my-4">Sign up now!</h1>
+            <div class="flex flex-col">
+                <label class="mt-4" for="fname">First Name*</label>
+                <input required type="text" placeholder="Enter your first name" name="firstName" class="focus:outline-none border-b-[1px] w-[100%] border-black px-2 py-2 bg-[transparent]">
+            </div>
+            <div class="flex flex-col">
+                <label class="mt-4" for="lname">Last Name*</label>
+                <input required type="text" placeholder="Enter your last name" name="lastName" class="focus:outline-none border-b-[1px] w-[100%] border-black px-2 py-2 bg-[transparent]">
+            </div>
+            <div class="flex flex-col">
+                <label class="mt-4" for="phone">Phone Number*</label>
+                <input required type="text" placeholder="Enter your phone number" name="phoneNumber" class="focus:outline-none border-b-[1px] w-[100%] border-black px-2 py-2 bg-[transparent]">
+            </div>
+            <div class="flex flex-col">
+                <label class="mt-4" for="email">Email*</label>
+                <input required type="text" placeholder="Enter your email" name="email" class="focus:outline-none border-b-[1px] w-[100%] border-black px-2 py-2 bg-[transparent]">
+            </div>
+            <div class="flex flex-col">
+                <label class="mt-4 text-[red]" for="location">Pick your location*</label>
+                <select class="focus:outline-none w-[100%] px-2 py-2 bg-[transparent]" name="location" id="location">
+                    <option value="owerri">Owerri</option>
+                    <option value="bonny">Bonny Island</option>
+                    <option value="online">Online</option>
+                </select>
+            </div>
+            <button type="submit" class="my-8 bg-black text-white py-4 px-8 rounded" >Submit</button>
+        </form>
+        <div class="w-[90%] md:w-[43%]">
+            <img class="w-100% rounded-lg" src="{% static 'images/banner.jpg' %}" alt="Banner">
+        </div>
+    </main>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
